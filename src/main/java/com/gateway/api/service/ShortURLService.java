@@ -12,15 +12,15 @@ public class ShortURLService {
     @Autowired
     private ShortURLRepositoryService shortURLRepositoryService;
 
-    public String getLongURL(String shortURL) {
+    public String getLongURL(String shortURL) throws Exception {
         return shortURLRepositoryService.getLongURL(shortURL);
     }
 
-    public String shortenURL(LongURLRequest body) {
+    public String shortenURL(LongURLRequest body) throws Exception {
         return shortURLRepositoryService.shortenURL(body);
     }
 
-    public void deleteURL(String shortURL) {
+    public void deleteURL(String shortURL) throws Exception {
         shortURLRepositoryService.deleteURL(shortURL);
     }
 }
