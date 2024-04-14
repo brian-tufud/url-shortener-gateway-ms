@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.gateway.api.request.LongURLRequest;
 import com.gateway.api.response.CrudStatusResponse;
+import com.gateway.api.response.URLResponse;
 import com.gateway.api.utils.Constants;
 import com.gateway.api.utils.RestClientService;
 import com.google.gson.FieldNamingPolicy;
@@ -26,16 +27,16 @@ public class ShortURLRepositoryService {
     @Autowired
     private Environment env;
 
-    public String getLongURL(String shortURL) throws Exception {
+    public URLResponse getLongURL(String shortURL) throws Exception {
         
         String baseURL = env.getProperty(Constants.READ_BASE_URL);
 
         HttpGet request = new HttpGet(baseURL + "/url/" + shortURL);
 
-        return restClientService.executeRequest(request, String.class);
+        return restClientService.executeRequest(request, URLResponse.class);
     }
 
-    public String shortenURL(LongURLRequest body) throws Exception {
+    public URLResponse shortenURL(LongURLRequest body) throws Exception {
         
         String baseURL = env.getProperty(Constants.WRITE_BASE_URL);
 
@@ -48,7 +49,7 @@ public class ShortURLRepositoryService {
         request.setEntity(new StringEntity(LongURLRequest, StandardCharsets.UTF_8));
         request.addHeader("Content-Type", "application/json");
 
-        return restClientService.executeRequest(request, String.class);
+        return restClientService.executeRequest(request, URLResponse.class);
     }
 
     public CrudStatusResponse deleteURL(String shortURL) throws Exception {
