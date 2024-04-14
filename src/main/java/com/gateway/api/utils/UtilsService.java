@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.gateway.api.response.URLResponse;
+
 @Service
 public class UtilsService {
 
@@ -31,5 +33,13 @@ public class UtilsService {
 
         return responseHeaders;
     }
+
+    public URLResponse getShortURLResponse(URLResponse shortURL) {
+        URLResponse response = new URLResponse();
+        
+        response.setShortURL(Constants.SHORT_URL_PREFIX + shortURL.getShortURL());
+
+        return response;
+    } 
 
 }
