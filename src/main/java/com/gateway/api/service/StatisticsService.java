@@ -13,11 +13,11 @@ public class StatisticsService {
     @Autowired
     private StatisticsRepositoryService statisticsRepositoryService;
 
-    public ShortURLStatisticsResponse getShortURLStatistics(String shortURL) {
+    public ShortURLStatisticsResponse getShortURLStatistics(String shortURL) throws Exception {
         return statisticsRepositoryService.getShortURLStatistics(shortURL);
     }
 
-    public LongURLStatisticsResponse getLongURLStatistics(String longURL) {
+    public LongURLStatisticsResponse getLongURLStatistics(String longURL) throws Exception {
         return statisticsRepositoryService.getLongURLStatistics(longURL);
     }
 }
