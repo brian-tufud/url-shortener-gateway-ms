@@ -34,11 +34,6 @@
 			<artifactId>gson</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20240303</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -72,10 +67,10 @@
             <version>2.17.0</version>
         </dependency>
 		<dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>dynamodb</artifactId>
-            <version>2.17.0</version>
-        </dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>31.0.1-jre</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -84,7 +79,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.url-shortener.api.Application</mainClass>
+					<mainClass>com.gateway.api.Application</mainClass>
 				</configuration>
 				<executions>
 					<execution>
