@@ -2,7 +2,7 @@ package com.gateway.api.utils;
 
 public class Constants {
     
-    public static final String SHORT_URL_PREFIX = "https://879e-2800-a4-2296-a500-2471-f02e-eb81-458b.ngrok-free.app/";
+    public static final String SHORT_URL_PREFIX = "http://gateway-api-meli-env.eba-snb5tigz.us-east-1.elasticbeanstalk.com/";
 
     public static final String READ_BASE_URL = "read_base_url";
 
