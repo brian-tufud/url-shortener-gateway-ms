@@ -12,6 +12,7 @@ import com.gateway.api.utils.UtilsService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping("/")
 public class RedirectController {
 
     private final ShortURLService shortURLService;
